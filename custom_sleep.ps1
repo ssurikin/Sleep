@@ -102,7 +102,7 @@ if ($requests -match "\[PROCESS\]") {
     exit
 }
 
-# 4. Проверка драйверов (твоя оригинальная логика)
+# 4. Проверка драйверов
  $driverLines = $requests | Select-String "\[DRIVER\]"
 if ($driverLines) {
     $safeDrivers = @("Virtual Audio", "USB Audio") 
@@ -147,7 +147,7 @@ if ($driverLines) {
     }
 }
 
-# 5. НОВАЯ ПРОВЕРКА: Эвристика активного окна (Защита от кривых плееров)
+# 5. Эвристика активного окна (защита от кривых плееров)
 # Если на переднем плане браузер или плеер, предполагаем, что человек смотрит видео
  $fgProcess = [IdleChecker]::GetForegroundProcessName()
 if ($mediaProcesses -contains $fgProcess) {
