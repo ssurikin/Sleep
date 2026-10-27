@@ -1,0 +1,1 @@
+CreateObject("Wscript.Shell").Run "powershell.exe -ExecutionPolicy Bypass -File ""C:\CustomScripts\Sleep\custom_sleep.ps1""", 0, False
